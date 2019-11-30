@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WebKit
+//import WebKit
 import AVFoundation
 
 class ViewController: UIViewController {
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var buttonLabel1: String = ""
     var timer = Timer()
 
-    @IBOutlet weak var garageCamera: WKWebView!
+    //@IBOutlet weak var garageCamera: WKWebView!
 //    @IBOutlet weak var door1Button: MyButton!
     @IBOutlet weak var door1Button: MyButton!
     
@@ -32,8 +32,8 @@ class ViewController: UIViewController {
     @objc func appMovedToForeground() {
         print("App moved to foreground!")
 //        updateTLLabel()
-        let url = URL(string: self.videoUrl)!
-        garageCamera.load(URLRequest(url: url))
+        //let url = URL(string: self.videoUrl)!
+        //garageCamera.load(URLRequest(url: url))
         updateDisplayFromDefaults()
     }
 
@@ -50,8 +50,8 @@ class ViewController: UIViewController {
         registerSettingsBundle()
         updateDisplayFromDefaults()
         
-        let url = URL(string: self.videoUrl)!
-        garageCamera.load(URLRequest(url: url))
+        //let url = URL(string: self.videoUrl)!
+        //garageCamera.load(URLRequest(url: url))
     }
     
     @IBAction func handleGesture(_ sender: UILongPressGestureRecognizer) {
@@ -69,16 +69,43 @@ class ViewController: UIViewController {
         var request = URLRequest(url: URL(string: door1url + "/press/single")!)
         print(door1url + "/press/single")
         request.httpMethod = "POST"
-        let session = URLSession.shared
+        
+        let urlconfig = URLSessionConfiguration.default
+        urlconfig.timeoutIntervalForRequest = 10
+        urlconfig.timeoutIntervalForResource = 10
+        let session = URLSession(configuration: urlconfig)//URLSession.shared
+
+//        let session = URLSession.shared
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         request.setValue(password, forHTTPHeaderField: "secretHeader")
-        
-        session.dataTask(with: request) {data, response, err in
-            print(String(data: data!, encoding: String.Encoding.utf8)!)
+        print("1")
+        session.dataTask(with: request) {data, response, error in
+            print("2")
+            // check for any errors
+            guard error == nil else {
+                print("error calling " + self.door1url + "/press/single")
+//                print(error!)
+                DispatchQueue.main.async {
+                    self.door1Button.backgroundColor = UIColor.interColor
+                    self.door1Button.setTitle("Single", for: .normal)
+                }
+                return
+            }
+            print("4")
+            // make sure we got data
+            guard let response = data else {
+              print("Error: did not receive data")
+              return
+            }
+            print(response)
         }.resume()
-        let url = URL(string: self.videoUrl)!
-        garageCamera.load(URLRequest(url: url))
+
+//            print(String(data: data!, encoding: String.Encoding.utf8)!)
+//        }.resume()
+        print("5")
+        //let url = URL(string: self.videoUrl)!
+        //garageCamera.load(URLRequest(url: url))
     }
 
     func updateDisplayFromDefaults(){
@@ -92,7 +119,7 @@ class ViewController: UIViewController {
         door1url = defaults.string(forKey: "door1url") ?? "https://www.door1url.com"
         print(door1url)
         
-        door2url = defaults.string(forKey: "door2ur2") ?? "https://www.door2ur2.com"
+        door2url = defaults.string(forKey: "door2url") ?? "https://www.door2url.com"
         print(door2url)
 
         videoUrl = defaults.string(forKey: "videoUrl") ?? "https://news.google.com"
