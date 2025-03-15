@@ -1,0 +1,4 @@
+#EXTM3U
+#EXT-X-SESSION-DATA:DATA-ID="com.xui.1_5_5r2"
+#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="UK SkySports F1" tvg-logo="http://23.227.147.172:80/images/c98060173f9e4e100685b5fc6febff6d.png" group-title="UK: Sport",UK SkySports F1
+http://ky-iptv.com:80/stemtv667766/lemotv667766/1196396.ts
