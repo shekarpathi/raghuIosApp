@@ -8,3 +8,18 @@ http://ky-iptv.com:80/stemtv667766/lemotv667766/3012780.ts
 http://ky-iptv.com:80/stemtv667766/lemotv667766/1846756.ts
 #EXTINF:-1 tvg-id="eurosport2.uk" tvg-name="UK: Eurosport 2 HD" tvg-logo="http://181.233.124.64:80/images/5f0345f01875bcd1d5961b0756f1f628.png" group-title="UK: Sport",UK: Eurosport 2 HD
 http://ky-iptv.com:80/stemtv667766/lemotv667766/1847082.ts
+
+#EXTINF:-1 tvg-id="btsport1.uk" tvg-name="UK TNT Sports 1" tvg-logo="https://i.ibb.co/sJc3Cyw/TNT-Sports-2023-svg.png" group-title="UK: Sport",UK TNT Sports 1
+http://ky-iptv.com:80/stemtv667766/lemotv667766/1846762.ts
+#EXTINF:-1 tvg-id="btsport2.uk" tvg-name="UK TNT Sports 2" tvg-logo="https://i.ibb.co/sJc3Cyw/TNT-Sports-2023-svg.png" group-title="UK: Sport",UK TNT Sports 2
+http://ky-iptv.com:80/stemtv667766/lemotv667766/1846763.ts
+#EXTINF:-1 tvg-id="btsport3.uk" tvg-name="UK TNT Sports 3" tvg-logo="https://i.ibb.co/sJc3Cyw/TNT-Sports-2023-svg.png" group-title="UK: Sport",UK TNT Sports 3
+http://ky-iptv.com:80/stemtv667766/lemotv667766/1846764.ts
+#EXTINF:-1 tvg-id="" tvg-name="UK TNT Sports 4" tvg-logo="https://i.ibb.co/sJc3Cyw/TNT-Sports-2023-svg.png" group-title="UK: Sport",UK TNT Sports 4
+http://ky-iptv.com:80/stemtv667766/lemotv667766/2274006.ts
+#EXTINF:-1 tvg-id="" tvg-name="UK TNT Sports 6" tvg-logo="" group-title="UK: Sport",UK TNT Sports 6
+http://ky-iptv.com:80/stemtv667766/lemotv667766/3026054.ts
+#EXTINF:-1 tvg-id="" tvg-name="UK TNT Sports 7" tvg-logo="" group-title="UK: Sport",UK TNT Sports 7
+http://ky-iptv.com:80/stemtv667766/lemotv667766/3026055.ts
+#EXTINF:-1 tvg-id="" tvg-name="UK TNT Sports 8" tvg-logo="" group-title="UK: Sport",UK TNT Sports 8
+http://ky-iptv.com:80/stemtv667766/lemotv667766/3026056.ts
